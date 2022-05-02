@@ -1,0 +1,45 @@
+.navbar {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+
+  a {
+    color: var(--color-text-on-primary);
+
+    &:hover {
+      color: var(--color-text-on-primary);
+    }
+
+    &:not(.navbar-brand):hover {
+      text-decoration: underline;
+    }
+  }
+
+  .bi {
+    color: var(--color-text-on-primary);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 0 1rem;
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--color-secondary);
+      margin: 0.5rem 0;
+    }
+  }
+
+  .nav-link {
+    padding: 0 1rem;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}

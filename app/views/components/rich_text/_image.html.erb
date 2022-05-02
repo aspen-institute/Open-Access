@@ -1,0 +1,6 @@
+<figure class="block--image">
+  <img src="<%= block['data']['file']['url'] %>" />
+  <% if block['data']['caption'].present? %>
+    <figcaption><%= raw(block['data']['caption']) %></figcaption>
+  <% end %>
+</figure>

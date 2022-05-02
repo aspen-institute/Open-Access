@@ -1,0 +1,2 @@
+class NavigationLink < ApplicationRecord
+end

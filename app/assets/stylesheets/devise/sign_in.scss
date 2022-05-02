@@ -1,0 +1,14 @@
+.sign-in {
+  & > h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+
+  .field {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,23 @@
+<% content["blocks"].each do |block| %>
+  <% if block["type"] == "paragraph" %>
+    <%= render "components/rich_text/paragraph", block: block %>
+  <% elsif block["type"] == "header" %>
+    <%= render "components/rich_text/header", block: block %>
+  <% elsif block["type"] == "list" %>
+    <%= render "components/rich_text/list", block: block %>
+  <% elsif block["type"] == "image" %>
+    <%= render "components/rich_text/image", block: block %>
+  <% elsif block["type"] == "linkTool" %>
+    <%= render "components/rich_text/link", block: block %>
+  <% elsif block["type"] == "embed" %>
+    <%= render "components/rich_text/embed", block: block %>
+  <% elsif block["type"] == "delimiter" %>
+    <%= render "components/rich_text/delimiter", block: block %>
+  <% elsif block["type"] == "raw" %>
+    <%= render "components/rich_text/raw", block: block %>
+  <% elsif block["type"] == "table" %>
+    <%= render "components/rich_text/table", block: block %>
+  <% elsif block["type"] == "alert" %>
+    <%= render "components/rich_text/alert", block: block %>
+  <% end %>
+<% end %>

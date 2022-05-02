@@ -1,0 +1,6 @@
+<% list_type = block["data"]["style"] === 'ordered' ? 'ol' : 'ul' %>
+<<%= list_type%> class="block--list">
+  <% block["data"]["items"].each do |item| %>
+    <li><%= raw(EditorHelper.interpolate_icons(item)) %></li>
+  <% end %>
+</<%= list_type%>>

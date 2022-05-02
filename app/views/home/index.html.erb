@@ -1,0 +1,25 @@
+<div class="home">
+
+  <div class="home__header<%= @banner[:value].present? ? " hero" : "" %>" style="<%= "#{@banner[:value].present? ? "background-image: url(#{@banner[:value]})" : ""}"   %>">
+    <div class="home__header__content">
+      <h1><%= @title[:value] %></h1>
+      <% if @subtitle[:value].present? %>
+        <p class="lead"><%= @subtitle[:value] %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-list">
+      <% @pages.each_with_index do |page, index| %>
+        <div class="page-list__item">
+          <%= render "components/page_card", page: page, index: index %>
+        </div>
+      <% end %>
+    </div>
+
+    <% @sections.each do |section| %>
+      <%= render "components/home_section", section: section %>
+    <% end %>
+  </div>
+</div>

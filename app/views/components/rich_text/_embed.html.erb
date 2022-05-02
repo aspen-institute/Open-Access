@@ -1,0 +1,8 @@
+<div class="block--embed block--embed--<%= block['data']['service'] %>">
+  <iframe src="<%= block['data']['embed'] %>"></iframe>
+  <% if block['data']['caption'].present? %>
+    <div class="block--embed__caption">
+      <p><%= raw(block['data']['caption']) %></p>
+    </div>
+  <% end %>
+</div>

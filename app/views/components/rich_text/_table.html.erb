@@ -1,0 +1,15 @@
+
+
+<table class="block--table">
+  <% block["data"]["content"].each_with_index do |row, index| %>
+    <tr>
+        <% row.each do |column| %>
+          <% if block["data"]["withHeadings"] == true && index == 0 %>
+            <th><%= raw(EditorHelper.interpolate_icons(column)) %></th>
+          <% else %>
+            <td><%= raw(EditorHelper.interpolate_icons(column)) %></td>
+          <% end %>
+        <% end %>
+    </tr>
+  <% end %>
+</table>

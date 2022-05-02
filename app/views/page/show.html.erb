@@ -1,0 +1,82 @@
+<div class="page">
+  <div class="page__header<%= @page.banner.present? ? " hero" : "" %>" style="<%= "background-image: url(#{@page.banner.present? ? @page.banner : ""})" %>">
+    <% if @page.show_text_on_banner %>
+      <div class="page__header__content">
+        <div>
+          <h1 class="page__title"><%= @page.title %></h1>
+
+          <% if @page.subtitle.present? %>
+            <h2 class="page__subtitle"><%= @page.subtitle %></h2>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="page__container py-3">
+
+    <div class="page__content">
+      <% if @page.present? && @page.content.present? %>
+        <%= render "components/rich_text/view", content: JSON.parse(@page.content) %>
+      <% end %>
+    </div>
+
+    <% children = @page.children %>
+
+    <% if children.length >= 1 %>
+      <div class="page__navigation">
+        <% children.each do |child| %>
+          <% if child.status == 'published' && child.id != @page.id %>
+            <div class="card" style="border-color: <%= child.color %>;">
+              <div class="card-body<%= child.icon.present? ? ' card-body--icon' : '' %>">
+                <div>
+                  <% if child.icon.present? %>
+                    <img src="<%= child.icon %>" />
+                  <% end %>
+                  <h5 class="card-title"><%= child.title %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= child.subtitle %></h6>
+                  <p class="card-text"><%= child.description %></p>
+                </div>
+                <a href="/<%= child.path %>" class="card-link btn" style="background: <%= child.color %>; color: #fff;">Learn More</a>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="page__navigation-links">
+      <%
+        links = @page.navigation_links
+        next_page = links[:next]
+        previous_page = links[:previous]
+        p links
+      %>
+
+      <% if next_page.nil? && previous_page.nil? %>
+
+      <% else %>
+        <% if !previous_page.nil? %>
+          <a href="/<%= previous_page.path %>" class="page__navigation-links__previous shadow-sm" style="background: <%= @page.color %>;">
+            <i class="bi bi-arrow-left-circle"></i>
+            <div>
+              <p><%= previous_page.title %></p>
+            </div>
+          </a>
+        <% else %>
+          <div class="page__navigation-links__previous"></div>
+        <% end %>
+        <% if !next_page.nil? %>
+          <a href="/<%= next_page.path %>" class="page__navigation-links__next shadow-sm" style="background: <%= @page.color %>;">
+            <div>
+              <p><%= next_page.title %></p>
+            </div>
+            <i class="bi bi-arrow-right-circle"></i>
+          </a>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>

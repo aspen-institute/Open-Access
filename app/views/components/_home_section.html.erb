@@ -1,0 +1,31 @@
+<% if section.present? %>
+  <section class="section py-3">
+    <div class="section__header">
+      <h2 class="section__title"><%= section.title %></h2>
+
+      <% if section.subtitle.present? %>
+        <p class="section__subtitle"><%= section.subtitle %></p>
+      <% end %>
+    </div>
+
+    <div class="section__pages">
+      <% section.page_references.each do |reference| %>
+        <div class="section__page">
+          <% if reference.page.icon.present? %>
+            <img src="<%= reference.page.icon %>" />
+          <% end %>
+          <h3><%= reference.page.title %></h3>
+          <% if reference.page.description.present? %>
+            <p><%= reference.page.description %></p>
+          <% end %>
+          <a href="/<%= reference.page.path %>" style="background: <%= reference.page.color %>">More</a>
+        </div>
+      <% end %>
+    </div>
+    <div class="section__content">
+      <% if section.present? && section.content.present? %>
+        <%= render "components/rich_text/view", content: JSON.parse(section.content) %>
+      <% end %>
+    </div>
+  </section>
+<% end %>

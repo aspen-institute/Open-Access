@@ -1,0 +1,9 @@
+<% content = field.to_s %>
+<% if content.present? %>
+  <%= render "components/rich_text/view", content: JSON.parse(content) %>
+<% else %>
+  <p>No content<p>
+<% end %>
+
+
+
