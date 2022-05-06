@@ -8,8 +8,6 @@ The application is build on Ruby on Rails. The application features a front end 
 
 ## Other Considerations and Set up:
 
----
-
 ### Prerequisites
 
 Ruby Version 3.1.1
@@ -47,8 +45,6 @@ Depending on your application's configuration some manual setup may be required:
 To directly upload photos, an image hosting service needs to be installed. Currently, all images are uploaded in the application’s folder
 
 ## License
-
----
 
 This project is open source and can be used when crediting the source.
 
