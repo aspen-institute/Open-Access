@@ -1,12 +1,12 @@
 <div class="accordion accordion-flush" id="<%= page.slug %>">
   <div class="accordion-item">
     <h2 class="accordion-header" id="label-<%= page.slug %>">
-      <button class="accordion-button<%= index === 0 ? '' : ' collapsed'%>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= page.slug %>" aria-expanded="<%= index === 0 ? 'true' : 'false'%>" aria-controls="collapse-<%= page.slug %>" style="background: <%= page.color %>">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= page.slug %>" aria-expanded="true" aria-controls="collapse-<%= page.slug %>" style="background: <%= page.color %>">
         <%= page.title %>
       </button>
       <p><%= page.subtitle || "" %></p>
     </h2>
-    <div id="collapse-<%= page.slug %>" class="accordion-collapse collapse<%= index === 0 ? ' show' : ''%>" aria-labelledby="label-<%= page.slug %>" data-bs-parent="<%= page.slug %>">
+    <div id="collapse-<%= page.slug %>" class="accordion-collapse collapse show" aria-labelledby="label-<%= page.slug %>" data-bs-parent="<%= page.slug %>">
       <div class="accordion-body">
         <% children = page.children %>
         <% if children.length > 0 %>

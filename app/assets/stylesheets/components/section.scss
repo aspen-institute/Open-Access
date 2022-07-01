@@ -40,10 +40,6 @@
     max-height: 90px;
   }
 
-  &:not(:last-child) {
-    border-right: 1px solid var(--color-text);
-  }
-
   a {
     display: inline-block;
     padding: 0.5rem 1rem;

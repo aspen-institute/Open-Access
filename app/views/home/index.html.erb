@@ -23,3 +23,7 @@
     <% end %>
   </div>
 </div>
+
+<% if ENV["DEMO_MODE"] == 'true' %>
+  <%= render "modal/demo" %>
+<% end %>
