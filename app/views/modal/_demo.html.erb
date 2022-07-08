@@ -1,0 +1,23 @@
+<div class="modal fade hide" id="demo-modal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true" style="display: block;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="demoModalLabel">Open Access Platform</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Welcome to Open Access! It’s an open-source, entirely free platform for community development and small business associations, lenders, cities and counties, and local government agencies to help small business entrepreneurs—particularly BIPOC food entrepreneurs—find the full range of technical assistance and lending opportunities near them. It is designed to be lifted, customized, and housed outside of Food & Society at the Aspen Institute, which built and launched it.</p>
+
+        <p>This open-source demonstration portal includes generic and cross-cutting information ready for easy customization to your organization, city, or region. Please visit these links for easy guides to adapting it to your own needs and location, and feel free to reach out should you have questions about using this platform at <a href="mailto:foodandsociety@aspeninstitute.org"><b>foodandsociety@aspeninstitute.org</b></a>.</p>
+
+        <p>Visit our <a href="https://www.aspeninstitute.org/programs/food-and-society-program/open-access-equitable-equity-for-food-entrepreneurs/" target="_blank" rel="noopener noreferrer">landing page</a> to <a href="https://github.com/aspen-institute/Open-Access" target="_blank" rel="noopener noreferrer">download the code base</a> and <a href="https://www.aspeninstitute.org/wp-content/uploads/2022/04/User-Guide-of-Equitable-Access-to-Equity-Food-and-Society-Program-The-Aspen-Institute.pdf" target="_blank" rel="noopener noreferrer">review our user guide</a> to easily implement this portal for your own community.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const demoModal = new bootstrap.Modal(document.getElementById('demo-modal'), {});
+
+  demoModal.toggle();
+</script>
